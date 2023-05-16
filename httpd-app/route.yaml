@@ -1,0 +1,15 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: httpd
+spec:
+  host: httpd-app.apps.cluster-2jpqr.2jpqr.sandbox205.opentlc.com
+  to:
+    kind: Service
+    name: httpd
+    weight: 100
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge
+  wildcardPolicy: None
